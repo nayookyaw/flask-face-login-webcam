@@ -7,17 +7,20 @@ nayookyaw.nok@gmail.com
 
 The main purpose is to login with face using webcam
 
-/*
-Using Programming
- Flask api, Face-recognition, face comparison
- webcam , image taking 
- ajax, template, html, javascript
-*/
+
+## Using Programming
+
+Flask api, Face-recognition, face comparison
+
+webcam , image taking 
+
+ajax, template, html, javascript
+
 
 ## run
 go to 'flask-face-login-webcam' folder
 
-## find server.py
+find server.py
 
 $ python server.py
 
