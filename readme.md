@@ -1,6 +1,6 @@
 /*
 
-Nay Oo Kyaw
+## Nay Oo Kyaw
 nayookyaw.nok@gmail.com
 
 */
@@ -17,7 +17,7 @@ Using Programming
 ## run
 go to 'flask-face-login-webcam' folder
 
-find server.py
+## find server.py
 
 $ python server.py
 
@@ -27,9 +27,9 @@ http://localhost:7000/
 
 Take image from webcam and check result
 
-If login is successful, page background will be green
+## If login is successful, page background will be green
 
-If login fails, page background will be red
+## If login fails, page background will be red
 
 ## Requirment
 
