@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript" src="/static/js/lib/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="my_camera"></div>
+	
+	<!-- First, include the Webcam.js JavaScript Library -->
+	<script type="text/javascript" src="/static/js/lib/webcam.min.js"></script>
+	
+	<!-- Configure a few settings and attach camera -->
+	<script language="JavaScript">
+		Webcam.set({
+			width: 320,
+			height: 240,
+			image_format: 'jpeg',
+			jpeg_quality: 90
+		});
+		Webcam.attach( '#my_camera' );
+    </script>
+    
+    <br/>
+    <input type=button value="Login With Face" onClick="take_snapshot()">
+    <br/>
+    <h2>Preview Image</h2>
+    <div id="preview"></div>
+
+    <!-- Code to handle taking the snapshot and displaying it locally -->
+	<script language="JavaScript">
+		// preload shutter audio clip
+        var shutter = new Audio();
+        var imge_uri;
+        $SERVER_URI = 'http://localhost:7000';
+
+		shutter.autoplay = false;
+		shutter.src = navigator.userAgent.match(/Firefox/) ? '/static/mp3/shutter.ogg' : '/static/mp3/shutter.mp3';
+		
+		function take_snapshot() {
+			// play sound effect
+			shutter.play();
+			
+			// take snapshot and get image data
+			Webcam.snap( function(data_uri) {
+                document.getElementById('preview').innerHTML = 
+                '<img src =" '+ data_uri +' "/>';
+
+                data = {
+                    'image_64' : data_uri
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: $SERVER_URI + '/login/with/image',
+                    contentType: 'application/json;charset=UTF-8',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    success: function(response) {
+                        console.log (response)
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    }
+                });
+				
+			});
+		}
+    </script>
+    
+</body>
+
+
+</html>
