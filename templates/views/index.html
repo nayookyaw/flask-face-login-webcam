@@ -22,7 +22,9 @@
     
     <br/>
     <input type=button value="Login With Face" onClick="take_snapshot()">
-    <br/>
+    <p>If login is successful, the background will be green</p>
+    <p>If login fails, the background will be red</p>
+
     <h2>Preview Image</h2>
     <div id="preview"></div>
 
@@ -48,6 +50,7 @@
                 data = {
                     'image_64' : data_uri
                 }
+                var result_color = 0;
 
                 $.ajax({
                     type: "POST",
@@ -56,7 +59,19 @@
                     dataType: 'json',
                     data: JSON.stringify(data),
                     success: function(response) {
-                        console.log (response)
+                        result = response.result;
+                        result.forEach(val => {
+                            if (val.result == "True") {
+                                result_color = 1;
+                            }
+                        }); 
+                        if (result_color) {
+                            console.log("Login success");
+                            $('body').css("background-color", "green");
+                        } else {
+                            console.log("Login fail!");
+                            $('body').css("background-color", "red");
+                        }
                     },
                     error: function(err) {
                         console.log(err);

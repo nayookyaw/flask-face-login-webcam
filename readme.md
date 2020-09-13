@@ -16,6 +16,8 @@ webcam , image taking
 
 ajax, template, html, javascript
 
+webcam.js
+
 
 ## run
 go to 'flask-face-login-webcam' folder
