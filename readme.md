@@ -1,9 +1,6 @@
-/*
 
-## Nay Oo Kyaw
-nayookyaw.nok@gmail.com
-
-*/
+    Nay Oo Kyaw 
+    nayookyaw.nok@gmail.com
 
 The main purpose is to login with face using webcam
 
