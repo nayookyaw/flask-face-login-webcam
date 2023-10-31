@@ -31,7 +31,7 @@ Take image from webcam and check result <br>
 
 # Result
 
-![alt text](./screenshots/second_login_success.png)
+![alt text](./screenshots/second_login_success.PNG)
 
 ## If login is successful, page background will be green
 
