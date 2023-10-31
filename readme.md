@@ -29,9 +29,13 @@ http://localhost:7000/
 
 Take image from webcam and check result <br>
 
-# Result
+# Success Result
 
 ![alt text](./screenshots/second_login_success.PNG)
+
+# Fail Result
+
+![alt text](./screenshots/third_login_fail.PNG)
 
 ## If login is successful, page background will be green
 
