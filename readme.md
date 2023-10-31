@@ -27,7 +27,11 @@ go to browser and enter
 
 http://localhost:7000/
 
-Take image from webcam and check result
+Take image from webcam and check result <br>
+
+# Result
+
+![alt text](./screenshots/second_login_success.png)
 
 ## If login is successful, page background will be green
 
